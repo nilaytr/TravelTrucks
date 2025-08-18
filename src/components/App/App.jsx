@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
+import { Loader } from '../Loader/Loader';
 import "./App.css";
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
@@ -9,13 +10,15 @@ const TruckDetailsPage = lazy(() => import('../../pages/TruckDetailsPage/TruckDe
 
 function App() {
     return (
-        <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/catalog' element={<CatalogPage />} />
-            <Route path='/catalog/:id' element={<TruckDetailsPage />} />
-            <Route path='*' element={<NotFoundPage />} />
-        </Routes>
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/catalog' element={<CatalogPage />} />
+                <Route path='/catalog/:id' element={<TruckDetailsPage />} />
+                <Route path='*' element={<NotFoundPage />} />
+            </Routes>
+        </Suspense>
     );
-}
+};
 
 export default App;
