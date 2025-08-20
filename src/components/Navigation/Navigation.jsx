@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/TravelTrucks.png";
 import css from "./Navigation.module.css";
 
 function Navigation() {
@@ -8,7 +9,7 @@ function Navigation() {
                 <NavLink
                     to="/"
                     className={css.headerLogo}>
-                    <img src= "/TravelTrucks.png" alt="Travel Trucks logo" />
+                    <img src={logo} alt="Travel Trucks logo" />
                 </NavLink>
                 <ul>
                     <li>
