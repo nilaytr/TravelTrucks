@@ -11,4 +11,12 @@ export const fetchTrucks = createAsyncThunk('trucks/fetchAll', async (_, thunkAP
         return thunkAPI.rejectWithValue(e.message);
     }
 });
-    
+
+export const fetchTrucksById = createAsyncThunk('trucks/fetchById', async (id, thunkAPI) => {
+    try {
+        const response = await axios.get(`/trucks/${id}`);
+        return response.data;
+    } catch (e) {
+        return thunkAPI.rejectWithValue(e.message);
+    }
+});
