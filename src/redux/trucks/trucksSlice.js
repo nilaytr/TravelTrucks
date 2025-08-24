@@ -14,6 +14,7 @@ const trucksSlice = createSlice({
             .addCase(fetchTrucks.pending, (state) => {
                 state.isLoading = true;
                 state.error = null;
+                state.items = [];
             })
             .addCase(fetchTrucks.fulfilled, (state, action) => {
                 state.isLoading = false;
