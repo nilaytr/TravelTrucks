@@ -7,7 +7,7 @@ const initialState = {
     rating: '',
     engine: '',
     form: '',
-    ac: false,
+    AC: false,
     kitchen: false,
     tv: false,
     bathroom: false,
