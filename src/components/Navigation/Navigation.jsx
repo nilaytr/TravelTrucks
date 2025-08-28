@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/TravelTrucks.png";
 import css from "./Navigation.module.css";
 
-function Navigation() {
+const Navigation = () => {
     return (
         <div>
             <nav>

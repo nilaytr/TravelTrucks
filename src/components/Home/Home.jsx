@@ -2,7 +2,7 @@ import { Button } from "../../components/Button/Button";
 import background from "../../assets/Picture.png";
 import css from "./Home.module.css";
 
-function Home() {
+const Home = () => {
     return (
         <>
             <div>
@@ -19,4 +19,4 @@ function Home() {
     );
 };
 
-export default Home
+export default Home;
