@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchTrucks } from "../../redux/trucks/trucksOperations";
 import Filters from "../../components/Filters/Filters";
-import CatalogSideBar from "../../components/CatalogSideBar/CatalogSideBar";
-import TruckCard from "../../components/TruckCard/TruckCard";
-import Loader from "../../components/Loader/Loader";
+//import CatalogSideBar from "../../components/CatalogSideBar/CatalogSideBar";
+//import TruckCard from "../../components/TruckCard/TruckCard";
+import { Loader } from "../../components/Loader/Loader";
+import Navigation from "../../components/Navigation/Navigation";
 
 const CatalogPage = () => {
     const dispatch = useDispatch();
@@ -15,11 +16,14 @@ const CatalogPage = () => {
     }, [dispatch]);
 
     return (
+        <>
+            <Navigation />
+            <Filters />
+            <Loader />
 
-    )
+        </>
 
-
-
-}
+    );
+};
 
 export default CatalogPage;

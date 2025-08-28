@@ -1,4 +1,4 @@
-import Svg from "../Svg/Svg";
+import Svg from "../Svg";
 import css from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {

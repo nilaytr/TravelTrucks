@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateFilters } from "../../redux/filters/filtersSlice";
-import Svg from "../Svg/Svg";
+import Svg from "../Svg";
 //import css from "./Location.module.css";
 
 const Location = () => {
