@@ -1,3 +1,7 @@
-export const Button = () => {
-  return <div></div>;
+export const Button = ({ text, className, onClick }) => {
+  return (
+    <button className={className} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
