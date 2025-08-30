@@ -18,7 +18,7 @@ const trucksSlice = createSlice({
             })
             .addCase(fetchTrucks.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.items = action.payload;
+                state.items = action.payload.items || [];
             })
             .addCase(fetchTrucks.rejected, (state, action) => {
                 state.isLoading = false;
