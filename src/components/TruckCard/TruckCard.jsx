@@ -75,9 +75,10 @@ const TruckCard = ({ truck }) => {
                                 />
                             ))}
                             {truck.transmission && (
-                                <Features text={truck.transmission} iconName="diagram" />
+                                <Features
+                                    text={truck.transmission[0].toUpperCase() + truck.transmission.slice(1)}
+                                    iconName="diagram" />
                             )}
-                            <Features text="Automatic" iconName="diagram" />
                         </ul>
                     </div>
                     <button onClick={handleShowMore}>Show more</button>

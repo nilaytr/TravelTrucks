@@ -1,4 +1,4 @@
-import {  useDispatch,  useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import TruckCard from "../TruckCard/TruckCard";
 import { fetchTrucks } from "../../redux/trucks/trucksOperations";
@@ -31,7 +31,7 @@ const Catalog = () => {
     
     return (
         <main>
-            {truckList.map((truck) => (
+            {truckList.slice(0, visibleTruck).map((truck) => (
                 <TruckCard key={truck.id} truck={truck} />
             ))}
 
