@@ -1,4 +1,3 @@
-import Svg from "../Svg";
 import css from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
@@ -8,6 +7,7 @@ const Reviews = ({ reviews }) => {
                 {reviews.map((review, index) => {
                     const initialName = review.reviewer_name ? review.reviewer_name[0].toUpperCase() : "?";
                     const displayName = review.reviewer_name || "Anonymous";
+                    const rating = Number(review.rating) || 0;
 
                     return (
                         <div key={index}>
@@ -15,10 +15,14 @@ const Reviews = ({ reviews }) => {
                                 <span className={css.initials}>{initialName}</span>
                                 <span className={css.name}>{displayName}</span>
                                 <div>
-                                    <p>{review.reviewer_name}</p>
+                                    <p>{displayName}</p>
                                     <span className={css.stars}>
-                                        {[...Array(review.rating)].map((_, starIndex) => (
-                                            <Svg key={starIndex} iconName="Rating-1" cssClass={css.star} />
+                                        {[...Array(5)].map((_, starIndex) => (
+                                            <img
+                                                key={starIndex}
+                                                src={starIndex < rating ? "/icons/Rating-1.svg" : "/icons/Rating.svg"}
+                                                alt={starIndex < rating ? "Filled Star" : "Empty Star"} className={css.star}
+                                            />
                                         ))}
                                     </span>
                                     <span className={css.date}>{review.date}</span>

@@ -1,4 +1,3 @@
-import Svg from "../Svg";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFilters } from "../../redux/filters/filtersSlice";
 
@@ -15,7 +14,7 @@ const Filters = ({ iconName, text, filterName, filterValue }) => {
         <>
             <li>
                 <button className={selected ? "active" : ""} onClick={handleClick}>
-                    <Svg iconName={iconName} />
+                    <img src={`/icons/${iconName}.svg`} alt={text} />
                     <p>{text}</p>
                 </button>
             </li>

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateFilters } from "../../redux/filters/filtersSlice";
-import Svg from "../Svg";
-//import css from "./Location.module.css";
+import css from "./Location.module.css";
 
 const Location = () => {
     const dispatch = useDispatch();
@@ -17,8 +16,8 @@ const Location = () => {
     return (
         <div>
             <p>Location</p>
-            <div>
-                <Svg iconName="Location" />
+            <div className={css.locationWrapper}>
+                <img src="/icons/map.svg" alt="Location Icon" className={css.locationIcon}/>
                 <input
                     type="text"
                     value={value}

@@ -3,6 +3,7 @@ import Filters from "../Filters/Filters";
 import { Button } from "../Button/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTrucks } from "../../redux/trucks/trucksOperations";
+import css from "./CatalogSideBar.module.css";
 
 const CatalogSideBar = () => {
     const filterObjects = useSelector((state) => state.filters);
@@ -36,7 +37,7 @@ const CatalogSideBar = () => {
                     <Filters iconName="bi_grid-3x3-gap" text="Alcove" filterName="form" filterValue="alcove" />
                 </ul>
             </div>
-            <Button text="Search" className="searchButton" onClick={handleSearch} />
+            <Button text="Search" className={css.searchButton} type="submit" onClick={handleSearch} />
         </aside>
     );
 };
