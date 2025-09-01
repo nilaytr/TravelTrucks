@@ -1,43 +1,70 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import TruckCard from "../TruckCard/TruckCard";
+import CatalogSideBar from "../CatalogSideBar/CatalogSideBar";
 import { fetchTrucks } from "../../redux/trucks/trucksOperations";
+import { filterTrucks } from "../../utils/filterTrucks";
 import { Loader } from "../Loader/Loader";
-//import css from "./Catalog.module.css";
+import css from "./Catalog.module.css";
 
 const Catalog = () => {
     const dispatch = useDispatch();
+    const { items, isLoading, error } = useSelector((state) => state.trucks);
+    const filters = useSelector((state) => state.filters);
+    
     const [visibleTruck, setVisibleTruck] = useState(4);
-
-    const truckList = useSelector((state) => state.trucks.items || []);
-    const isLoading = useSelector((state) => state.trucks.isLoading);
-    const error = useSelector((state) => state.trucks.error);
-
+    const [filteredItems, setFilteredItems] = useState([]);
+    const [hasSearched, setHasSearched] = useState(false);
+    
     useEffect(() => {
         dispatch(fetchTrucks());
     }, [dispatch]);
-
+    
     const handleLoadMore = () => {
         setVisibleTruck((prev) => prev + 4);
-    }
-
+    };
+    
+    const handleSearch = () => {
+        const result = filterTrucks({
+            trucks: items,
+            location: filters.location,
+            selectedTypes: filters.form ? [filters.form] : [],
+            selectedEquipments: Object.keys(filters).filter((key) =>
+                typeof filters[key] === "boolean" && filters[key] === true),
+        });
+        
+        setFilteredItems(result);
+        setHasSearched(true);
+        setVisibleTruck(4);
+    };
+    
     if (isLoading) return <Loader />;
     if (error) return <div>{error}</div>;
-
-    if (truckList.length === 0)
-        return (
-            <div>No trucks found</div>
-        );
+    
+    const displayTrucks = hasSearched ? filteredItems : items;
+    
+    if (!displayTrucks || displayTrucks.length === 0) {
+        return <div>No trucks found</div>;
+    }
     
     return (
-        <main>
-            {truckList.slice(0, visibleTruck).map((truck) => (
-                <TruckCard key={truck.id} truck={truck} />
-            ))}
-
-            {visibleTruck < truckList.length && (
-                <button onClick={handleLoadMore}>Load more</button>
-            )}
+        <main className={css.catalog}>
+            <div>
+                <CatalogSideBar />
+                <button onClick={handleSearch}>Search</button>
+            </div>
+            <div>
+                <ul>
+                    {displayTrucks.slice(0, visibleTruck).map((truck) => (
+                        <li key={truck.id}>
+                            <TruckCard truck={truck} />
+                        </li>
+                    ))}
+                </ul>
+                {visibleTruck < displayTrucks.length && (
+                    <button onClick={handleLoadMore}>Load more</button>
+                )}
+            </div>
         </main>
     );
 };

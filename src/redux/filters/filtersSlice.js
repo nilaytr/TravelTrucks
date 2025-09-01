@@ -19,18 +19,25 @@ const initialState = {
 };
 
 const filtersSlice = createSlice({
-    name: 'filters',
+    name: "filters",
     initialState,
     reducers: {
-        updateFilters(state, action) {
-            return { ...state, ...action.payload }
+        setLocation(state, action) {
+            state.location = action.payload;
+        },
+        setForm(state, action) {
+            state.form = action.payload;
+        },
+        toggleFeature(state, action) {
+            const feature = action.payload;
+            state[feature] = !state[feature];
         },
         resetFilters() {
-            return { ...initialState }
+            return { ...initialState };
         },
     },
 });
 
-export const { updateFilters, resetFilters } = filtersSlice.actions;
+export const { setLocation, setForm, toggleFeature, resetFilters } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

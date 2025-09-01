@@ -1,8 +1,10 @@
-import { Button } from "../../components/Button/Button";
+import { useNavigate } from 'react-router-dom';
 import background from "../../assets/Picture.png";
 import css from "./Home.module.css";
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <div>
@@ -13,7 +15,7 @@ const Home = () => {
                 <div>
                     <h2>You can find everything you want in our catalog</h2>
                 </div>
-                <Button to="/catalog" className={css.viewButton}>View Now</Button>
+                <button onClick={() => navigate("/catalog")} className={css.viewButton}>View Now</button>
             </div>
         </>
     );

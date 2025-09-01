@@ -1,24 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
-import { updateFilters } from "../../redux/filters/filtersSlice";
+import { setForm, toggleFeature } from "../../redux/filters/filtersSlice";
+import css from "./Filters.module.css";
 
-const Filters = ({ iconName, text, filterName, filterValue }) => {
+const Filters = ({ iconName, text, filterName, type, value }) => {
     const dispatch = useDispatch();
-    const filter = useSelector((state) => state.filters[filterName]);
-    const selected = filter === filterValue;
-
+    const currentValue = useSelector((state) => state.filters[filterName]);
+    
+    const selected = type === "toggle"
+        ? currentValue === true
+        : currentValue === value;
+    
     const handleClick = () => {
-        dispatch(updateFilters({ [filterName]: selected ? "" : filterValue }));
+        if (type === "toggle") {
+            dispatch(toggleFeature(filterName));
+        } else if (type === "select") {
+            dispatch(setForm(selected ? "" : value));
+        }
     };
-
+    
     return (
-        <>
-            <li>
-                <button className={selected ? "active" : ""} onClick={handleClick}>
-                    <img src={`/icons/${iconName}.svg`} alt={text} />
-                    <p>{text}</p>
-                </button>
-            </li>
-        </>
+        <li>
+            <button className={`${css.button} ${selected ? css.buttonSelected : ""}`}
+                onClick={handleClick}>
+                <img src={`/icons/${iconName}.svg`} alt={text} className={css.icon} />
+                <p>{text}</p>
+            </button>
+        </li>
     );
 };
 

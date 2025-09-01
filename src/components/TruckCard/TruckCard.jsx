@@ -1,4 +1,3 @@
-//import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrucksById } from "../../redux/trucks/trucksOperations";
 import { useNavigate } from "react-router-dom";
@@ -77,7 +76,8 @@ const TruckCard = ({ truck }) => {
                             {truck.transmission && (
                                 <Features
                                     text={truck.transmission[0].toUpperCase() + truck.transmission.slice(1)}
-                                    iconName="diagram" />
+                                    iconName="diagram"
+                                />
                             )}
                         </ul>
                     </div>
