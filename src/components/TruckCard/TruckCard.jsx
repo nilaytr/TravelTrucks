@@ -25,9 +25,13 @@ const TruckCard = ({ truck }) => {
         dispatch(addFavourite(truck));
     };
     
-    const handleShowMore = () => {
-        dispatch(fetchTrucksById(truck.id));
-        navigate(`/catalog/${truck.id}`);
+    const handleShowMore = async () => {
+        try {
+            await dispatch(fetchTrucksById(truck.id)).unwrap();
+            navigate(`/catalog/${truck.id}`, { state: truck });
+        } catch (error) {
+            console.error(error);
+        }
     };
     
     const featureKeys = Object.keys(truck || {}).filter(
@@ -38,7 +42,7 @@ const TruckCard = ({ truck }) => {
             <ul>
                 <li>
                     <div>
-                        <img src={truck.gallery?.[0]?.thumb || "/icons/placeholder.svg"} alt={truck.name} />
+                        <img src={truck.gallery?.[0]?.thumb} alt={truck.name} />
                     </div>
                     <div>
                         <h2>{truck.name}</h2>

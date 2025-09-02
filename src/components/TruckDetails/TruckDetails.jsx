@@ -13,6 +13,8 @@ const TruckDetails = ({ truck }) => {
 
     if (!truck) return null;
 
+    console.log("TruckDetails props.truck:", truck);
+
     const {
         name,
         rating,
