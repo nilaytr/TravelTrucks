@@ -13,9 +13,9 @@ const Location = () => {
     };
 
     return (
-        <div>
-            <p>Location</p>
-            <div className={css.locationWrapper}>
+        <div className={css.locationWrapper}>
+            <p className={css.locationTitle}>Location</p>
+            <div className={css.locationInput}>
                 <img src="/icons/map.svg" alt="Location Icon" className={css.locationIcon} />
                 <input
                     type="text"
@@ -23,6 +23,7 @@ const Location = () => {
                     onChange={(e) => handleChange(e)}
                     name="location"
                     placeholder="Please enter a location"
+                    className={css.inputField}
                 />
             </div>
         </div>

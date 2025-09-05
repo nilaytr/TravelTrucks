@@ -1,0 +1,51 @@
+.filtersEq ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding-left: 70px;
+}
+
+.filtersEq ul li:nth-child(4),
+.filtersEq ul li:nth-child(5) {
+    grid-column: span 1;
+}
+
+.filtersTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #475467;
+    padding-bottom: 30px;
+    margin-top: 40px;
+    padding-left: 70px;
+}
+
+.vehicleTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #101828;
+    padding-bottom: 40px;
+    padding-left: 70px;
+}
+
+.vehicleTitleType {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #101828;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-left: 70px;
+}
+
+.filtersType ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding-left: 70px;
+}

@@ -4,14 +4,14 @@ import css from "./Navigation.module.css";
 
 const Navigation = () => {
     return (
-        <div>
+        <div className={css.navigation}>
             <nav>
                 <NavLink
                     to="/"
                     className={css.headerLogo}>
-                    <img src={logo} alt="Travel Trucks logo" />
+                    <img src={logo}  alt="Travel Trucks logo" />
                 </NavLink>
-                <ul>
+                <ul className={css.navLinks}>
                     <li>
                         <NavLink
                             to="/"

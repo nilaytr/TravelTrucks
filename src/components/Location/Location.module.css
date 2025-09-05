@@ -1,10 +1,49 @@
 .locationWrapper {
+    display: block;
+    position: relative;
+    padding-left: 70px;
+    padding-top: 30px;
+}
+
+.locationTitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #6C717B;
+    padding-bottom: 8px;
+}
+
+.locationInput {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    width: 360px;
+    height: 56px;
+    background-color: #F7F7F7;
+    border-radius: 12px;
+    border: none;
 }
 
 .locationIcon {
+    position: absolute;
+    color: #101828;
     width: 20px;
     height: 20px;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.inputField {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    border-radius: 12px;
+    border: none;
+    background-color: #F7F7F7;
+    width: 100%;
+    padding: 10px 12px 10px 50px;
+    outline: none;
 }

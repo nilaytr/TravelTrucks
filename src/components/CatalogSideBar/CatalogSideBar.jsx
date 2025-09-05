@@ -9,9 +9,9 @@ const CatalogSideBar = () => {
             <div>
                 <Location />
             </div>
-            <div>
-                <p>Filters</p>
-                <h2>Vehicle equipment</h2>
+            <div className={css.filtersEq}>
+                <p className={css.filtersTitle}>Filters</p>
+                <h2 className={css.vehicleTitle}>Vehicle equipment</h2>
                 <ul>
                     <Filters iconName="ac" text="AC" filterName="AC" filterValue="true" />
                     <Filters iconName="diagram" text="Automatic" filterName="transmission" value="automatic" />
@@ -20,8 +20,8 @@ const CatalogSideBar = () => {
                     <Filters iconName="bathroom" text="Bathroom" filterName="bathroom" type="toggle" />
                 </ul>
             </div>
-            <div>
-                <h2>Vehicle type</h2>
+            <div className={css.filtersType}>
+                <h2 className={css.vehicleTitleType}>Vehicle type</h2>
                 <ul>
                     <Filters iconName="bi_grid-1x2" text="Van" filterName="form" type="select" value="van" />
                     <Filters iconName="bi_grid" text="Fully Integrated" filterName="form" type="select" value="fullyIntegrated" />

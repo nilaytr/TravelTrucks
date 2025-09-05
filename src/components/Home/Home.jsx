@@ -7,13 +7,11 @@ const Home = () => {
 
     return (
         <>
-            <div>
+            <div className={css.homeWrapper}>
                 <img src={background} alt="picture" className={css.bgPicture} />
                 <div>
-                    <h1>Campers of your dreams</h1>
-                </div>
-                <div>
-                    <h2>You can find everything you want in our catalog</h2>
+                    <h1 className={css.homeTitle}>Campers of your dreams</h1>
+                    <h2 className={css.homeDescr}>You can find everything you want in our catalog</h2>
                 </div>
                 <button onClick={() => navigate("/catalog")} className={css.viewButton}>View Now</button>
             </div>
