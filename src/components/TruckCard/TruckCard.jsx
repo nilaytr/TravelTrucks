@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { addFavourite } from "../../redux/favourites/favouritesSlice";
 import { Loader } from "../Loader/Loader";
 import Features from "../Features/Features";
-//import css from "./TruckCard.module.css";
+import css from "./TruckCard.module.css";
 
 const TruckCard = ({ truck }) => {
     const dispatch = useDispatch();
@@ -39,15 +39,15 @@ const TruckCard = ({ truck }) => {
 
     return (
         <>
-            <ul>
-                <li>
-                    <div>
+            <ul className={css.truckCard}>
+                <li className={css.card}>
+                    <div className={css.imageWrapper}>
                         <img src={truck.gallery?.[0]?.thumb} alt={truck.name} />
                     </div>
-                    <div>
+                    <div className={css.truckName}>
                         <h2>{truck.name}</h2>
                     </div>
-                    <div>
+                    <div className={css.price}>
                         <h2>€ {Number(truck.price || 0).toFixed(2)}</h2>
                         <button
                             onClick={handleFavourite}
@@ -59,17 +59,17 @@ const TruckCard = ({ truck }) => {
                             />
                         </button>
                     </div>
-                    <div>
+                    <div className={css.rating}>
                         <img src="/icons/Rating-1.svg" alt="Rating" />
                         <p>{truck.rating} ({truck.reviews?.length || 0} Reviews)</p>
                     </div>
-                    <div>
+                    <div className={css.location}>
                         <img src="/icons/map.svg" alt="Map" />
                         <p>{truck.location}</p>
                     </div>
-                    <p>{truck.description}</p>
+                    <p className={css.truckDescr}>{truck.description}</p>
                     <div>
-                        <ul>
+                        <ul className={css.featuresUl}>
                             {featureKeys.map((key) => (
                                 <Features
                                     key={key}
@@ -85,7 +85,7 @@ const TruckCard = ({ truck }) => {
                             )}
                         </ul>
                     </div>
-                    <button onClick={handleShowMore}>Show more</button>
+                    <button className={css.showMore} onClick={handleShowMore}>Show more</button>
                 </li>
             </ul>
         </>

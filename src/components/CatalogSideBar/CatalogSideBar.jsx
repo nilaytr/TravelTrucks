@@ -13,8 +13,8 @@ const CatalogSideBar = () => {
                 <p className={css.filtersTitle}>Filters</p>
                 <h2 className={css.vehicleTitle}>Vehicle equipment</h2>
                 <ul>
-                    <Filters iconName="ac" text="AC" filterName="AC" filterValue="true" />
-                    <Filters iconName="diagram" text="Automatic" filterName="transmission" value="automatic" />
+                    <Filters iconName="ac" text="AC" filterName="AC" type="toggle" value="true" />
+                    <Filters iconName="diagram" text="Automatic" filterName="transmission" type="toggle" value="automatic" />
                     <Filters iconName="kitchen" text="Kitchen" filterName="kitchen" type="toggle" />
                     <Filters iconName="tv" text="TV" filterName="tv" type="toggle" />
                     <Filters iconName="bathroom" text="Bathroom" filterName="bathroom" type="toggle" />

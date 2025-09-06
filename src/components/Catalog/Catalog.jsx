@@ -30,7 +30,7 @@ const Catalog = () => {
             location: filters.location,
             selectedTypes: filters.form ? [filters.form] : [],
             selectedEquipments: Object.keys(filters).filter((key) =>
-                typeof filters[key] === "boolean" && filters[key] === true),
+                typeof filters[key] === "boolean" && filters[key] === true).map(key => key.toLowerCase())
         });
         
         setFilteredItems(result);
@@ -51,9 +51,9 @@ const Catalog = () => {
         <main className={css.catalog}>
             <div>
                 <CatalogSideBar />
-                <button onClick={handleSearch}>Search</button>
+                <button className={css.searchButton} onClick={handleSearch}>Search</button>
             </div>
-            <div>
+            <div className={css.trucksRight}>
                 <ul>
                     {displayTrucks.slice(0, visibleTruck).map((truck) => (
                         <li key={truck.id}>
@@ -62,7 +62,7 @@ const Catalog = () => {
                     ))}
                 </ul>
                 {visibleTruck < displayTrucks.length && (
-                    <button onClick={handleLoadMore}>Load more</button>
+                    <button className={css.loadMoreButton} onClick={handleLoadMore}>Load more</button>
                 )}
             </div>
         </main>

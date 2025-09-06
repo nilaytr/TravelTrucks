@@ -1,0 +1,21 @@
+.checkButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #FFFFFF;
+    cursor: pointer;
+    width: 100px;
+    height: 90px;
+}
+
+.buttonSelected {
+    border-color: #E44848;
+}
+
+.checkButtonWrapper:has(img[src$="bathroom.svg"]) .checkButton {
+    margin-left: -91px;
+}

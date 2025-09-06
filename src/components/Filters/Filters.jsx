@@ -19,8 +19,8 @@ const Filters = ({ iconName, text, filterName, type, value }) => {
     };
     
     return (
-        <li>
-            <button className={`${css.button} ${selected ? css.buttonSelected : ""}`}
+        <li className={css.checkButtonWrapper}>
+            <button className={`${css.checkButton} ${selected ? css.buttonSelected : ""}`}
                 onClick={handleClick}>
                 <img src={`/icons/${iconName}.svg`} alt={text} className={css.icon} />
                 <p>{text}</p>

@@ -15,8 +15,8 @@ export const filterTrucks = ({
             switch (equip) {
                 case "ac":
                     return truck.AC;
-                case "auto":
-                    return truck.transmission === "automatic";
+                case "transmission":
+                    return truck.transmission?.toLowerCase() === "automatic";
                 case "kitchen":
                     return truck.kitchen;
                 case "tv":
