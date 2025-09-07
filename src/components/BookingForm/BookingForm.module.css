@@ -1,0 +1,98 @@
+.bookWrapper {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    border: 1px solid #DADDE1;
+    border-radius: 10px;
+    padding: 44px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 589px;
+    left: 795px;
+}
+
+.bookHeader {
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #101828;
+    margin-left: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bookText {
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #475467;
+    right: 255px;
+    margin-top: 35px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.formInput {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    border-radius: 12px;
+    border: none;
+    background-color: #F7F7F7;
+    width: 100%;
+    padding: 18px 230px 18px 18px;
+    outline: none;
+    left: -610px;
+    margin-top: 10px;
+    top: 100px;
+}
+
+.formWrapper {
+    position: relative;
+    border-radius: 12px;
+    padding: 44px;
+    display: flex;
+    justify-content: space-between;
+    bottom: -30px;
+    left: -655px;
+}
+
+.formError {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #E44848;
+}
+
+.formButton {
+    display: block;
+    position: relative;
+    margin-top: 40px;
+    left: 170px;
+    border: none;
+    border-radius: 200px;
+    min-width: 166px;
+    height: 56px;
+    background-color: #E44848;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5%;
+    color: #FFFFFF;
+}
+
+.formButton:hover {
+    background-color: #D84343;
+}
+
+.commentWrapper .formInput {
+    font-family: "Inter", sans-serif;
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Features from "../Features/Features";
 import Reviews from "../Reviews/Reviews";
 import BookingForm from "../BookingForm/BookingForm";
-//import css from "./TruckDetails.module.css";
+import css from "./TruckDetails.module.css";
 
 const TruckDetails = ({ truck }) => {
     const [activeTab, setActiveTab] = useState('features');
@@ -12,8 +12,6 @@ const TruckDetails = ({ truck }) => {
     };
 
     if (!truck) return null;
-
-    console.log("TruckDetails props.truck:", truck);
 
     const {
         name,
@@ -37,31 +35,33 @@ const TruckDetails = ({ truck }) => {
     } = truck;
 
     return (
-        <div>
-            <div>
+        <div className={css.detailsContainer}>
+            <div className={css.detailsHeader}>
                 <h2>{name}</h2>
             </div>
-            <div>
-                <p>{rating}</p>
+            <div className={css.ratingDetails}>
+                <img src="/icons/Rating-1.svg" alt="Rating" />
+                <p>{rating} ({truck.reviews?.length || 0} Reviews)</p>
             </div>
-            <div>
+            <div className={css.locationDetails}>
+                <img src="/icons/map.svg" alt="Map" />
                 <p>{location}</p>
             </div>
-            <div>
+            <div className={css.priceDetails}>
                 <h2>€ {price.toFixed(2)}</h2>
             </div>
-            <div>
+            <div className={css.galleryDetails}>
                 {gallery.map((img, index) => (
                     <img key={index} src={img.original} alt={`${name} image ${index + 1}`} />
                 ))}
             </div>
-            <div>
+            <div className={css.descrDetails}>
                 <p>{description}</p>
             </div>
-            <div>
-                <button className={`tab-button ${activeTab === "features" ? "active" : ""}`}
+            <div className={css.tabs}>
+                <button className={`${css.tabButton} ${activeTab === "features" ? css.active : ""}`}
                     onClick={() => handleClick("features")}>Features</button>
-                <button className={`tab-button ${activeTab === "reviews" ? "active" : ""}`}
+                <button className={`${css.tabButton} ${activeTab === "reviews" ? css.active : ""}`}
                     onClick={() => handleClick("reviews")}>Reviews</button>
             </div>
             <div>

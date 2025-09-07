@@ -2,19 +2,18 @@ import css from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
     return (
-        <div>
-            <div>
+        <div className={css.reviewsWrapper}>
+            <div className={css.reviewsContainer}>
                 {reviews.map((review, index) => {
                     const initialName = review.reviewer_name ? review.reviewer_name[0].toUpperCase() : "?";
                     const displayName = review.reviewer_name || "Anonymous";
-                    const rating = Number(review.rating) || 0;
+                    const rating = Number(review.reviewer_rating) || 0;
 
                     return (
                         <div key={index}>
-                            <div>
+                            <div className={css.reviewItem}>
                                 <span className={css.initials}>{initialName}</span>
-                                <span className={css.name}>{displayName}</span>
-                                <div>
+                                <div className={css.nameStars}>
                                     <p>{displayName}</p>
                                     <span className={css.stars}>
                                         {[...Array(5)].map((_, starIndex) => (
@@ -28,7 +27,7 @@ const Reviews = ({ reviews }) => {
                                     <span className={css.date}>{review.date}</span>
                                 </div>
                             </div>
-                            <p>{review.comment}</p>
+                            <p className={css.reviewText}>{review.comment}</p>
                         </div>
                     );
                 })}

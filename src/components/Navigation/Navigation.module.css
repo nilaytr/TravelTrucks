@@ -6,6 +6,11 @@
     justify-content: space-between;
 }
 
+.catalogBg {
+    background-color: #F7F7F7;
+    width: 100%;
+}
+
 .headerLogo {
     padding-left: 20px;
     padding-top: 30px;

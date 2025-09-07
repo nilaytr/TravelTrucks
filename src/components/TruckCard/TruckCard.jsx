@@ -3,7 +3,7 @@ import { fetchTrucksById } from "../../redux/trucks/trucksOperations";
 import { useNavigate } from "react-router-dom";
 import { addFavourite } from "../../redux/favourites/favouritesSlice";
 import { Loader } from "../Loader/Loader";
-import Features from "../Features/Features";
+import FeaturesItem from "../Features/FeaturesItem";
 import css from "./TruckCard.module.css";
 
 const TruckCard = ({ truck }) => {
@@ -36,7 +36,7 @@ const TruckCard = ({ truck }) => {
     
     const featureKeys = Object.keys(truck || {}).filter(
         (key) => typeof truck[key] === "boolean" && truck[key] === true);
-
+    
     return (
         <>
             <ul className={css.truckCard}>
@@ -71,14 +71,14 @@ const TruckCard = ({ truck }) => {
                     <div>
                         <ul className={css.featuresUl}>
                             {featureKeys.map((key) => (
-                                <Features
+                                <FeaturesItem
                                     key={key}
                                     text={key[0].toUpperCase() + key.slice(1)}
                                     iconName={key.toLowerCase()}
                                 />
                             ))}
                             {truck.transmission && (
-                                <Features
+                                <FeaturesItem
                                     text={truck.transmission[0].toUpperCase() + truck.transmission.slice(1)}
                                     iconName="diagram"
                                 />

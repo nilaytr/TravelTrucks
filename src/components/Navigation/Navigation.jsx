@@ -1,10 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/TravelTrucks.png";
 import css from "./Navigation.module.css";
 
 const Navigation = () => {
+    const location = useLocation();
+    const isCatalog = location.pathname === "/catalog";
+    
     return (
-        <div className={css.navigation}>
+        <div className={`${css.navigation} ${isCatalog ? css.catalogBg : ""}`}>
             <nav>
                 <NavLink
                     to="/"
