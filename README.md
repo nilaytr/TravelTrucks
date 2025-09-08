@@ -1,4 +1,4 @@
-# ⛟ Travel Trucks
+# 🚚 Travel Trucks
 
 TravelTrucks, karavan kiralama deneyimini kullanıcı dostu haline getiren modern bir web uygulamasıdır. Kullanıcılar, farklı karavan seçeneklerini kolayca keşfedebilir, filtreleyebilir ve anında rezervasyon yapabilir.
 Uygulama, yüksek performans ve ölçeklenebilirlik için React ve Redux teknolojileri kullanılarak geliştirilmiştir.
