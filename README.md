@@ -1,12 +1,33 @@
-# React + Vite
+# ⛟ Travel Trucks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TravelTrucks, karavan kiralama deneyimini kullanıcı dostu haline getiren modern bir web uygulamasıdır. Kullanıcılar, farklı karavan seçeneklerini kolayca keşfedebilir, filtreleyebilir ve anında rezervasyon yapabilir.
+Uygulama, yüksek performans ve ölçeklenebilirlik için React ve Redux teknolojileri kullanılarak geliştirilmiştir.
 
-Currently, two official plugins are available:
+## 🔐 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Karavanları konum, tür ve teknik özelliklere göre filtreleme
+- Detaylı bilgiler, kullanıcı değerlendirmeleri ve rezervasyon akışı
+- React tabanlı dinamik ve hızlı arayüz
+- Redux ile yönetilen merkezi uygulama durumu
 
-## Expanding the ESLint configuration
+## ⚙️ Kurulum ve Çalıştırma
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Repoyu klonlayın:
+
+git clone https://github.com/nilaytr/TravelTrucks.git
+
+2. Proje dizinine gidin:
+
+cd TravelTrucks
+
+3. Bağımlılıkları yükleyin:
+
+npm install
+
+4. Uygulamayı başlatın:
+
+npm run dev
+
+## 💻 Yazar
+
+- [Nilay Türker](https://github.com/nilaytr)
